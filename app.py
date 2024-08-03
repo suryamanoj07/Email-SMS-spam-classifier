@@ -6,7 +6,8 @@ import time
 
 model = pickle.load(open('model2.pkl', 'rb'))
 
-nlp = spacy.load('en_core_web_sm')
+from spacy.cli import download
+download("en_core_web_sm")
 
 def preprocess_text(text):
     doc = nlp(text)  # Tokenize and analyze the text
